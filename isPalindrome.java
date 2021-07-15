@@ -19,17 +19,17 @@ class Rextester
     
     public static boolean isPalindrome(String s) 
     {
-       int start=0,end=s.length()-1;
+       int begin=0,end=s.length()-1;
         
-        while(start<end)
+        while(begin<end)
         {
-            while(start<end && !isAlphaNum(s.charAt(start))) start++;
-            while(start<end && !isAlphaNum(s.charAt(end))) end--;
+            while(begin<end && !isAlphaNum(s.charAt(begin))) begin++;
+            while(begin<end && !isAlphaNum(s.charAt(end))) end--;
            
-            if(lowerCase(s.charAt(start))!=lowerCase(s.charAt(end)))  
+            if(lowerCase(s.charAt(begin))!=lowerCase(s.charAt(end)))  
                 return false; 
             
-            start++;
+            begin++;
             end--;
         }
         
