@@ -1,0 +1,41 @@
+import java.util.Random;
+
+class Main
+{
+        public static void remove(int[] arr)
+        {
+                Random rand = new Random();
+                int n = arr.length;
+                // generating random position from where the element is to be removed
+                // the index generated will be in range [0, n)
+                int pos = rand.nextInt(n);
+
+                // until the length of array becomes 0
+                while(n > 0)
+                {
+                        System.out.println("removing at:\t"+ pos + "\telement:" + arr[pos]);
+
+                        // removing element, i.e. shifting all the numbers from pos + 1 to n by 1 position left
+                        for(int i=pos; i<n-1; i++)
+                        {
+                                arr[i] = arr[i+1];
+                        }
+
+                        // decresing the n to note the remaining elements in array
+                        n--;
+
+                        // generating next position to remove
+                        if(n > 0)
+                                pos = rand.nextInt(n);
+
+                }
+
+        }
+
+        public static void main(String[] args) {
+                
+                int[] arr = {1, 2, 3, 4, 5};
+                remove(arr);
+
+        }
+}
